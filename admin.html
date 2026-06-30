@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Panel Admin</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <div class="max-w-6xl mx-auto p-8">
+
+        <!-- HEADER -->
+
+        <div class="flex justify-between items-center mb-10">
+
+            <div>
+
+                <h1 class="text-4xl font-bold">
+                    Panel SuperAdmin
+                </h1>
+
+                <p class="text-gray-600 mt-2">
+                    Gestión de cursos
+                </p>
+
+            </div>
+
+            <a href="index.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl transition">
+
+                Volver
+
+            </a>
+
+        </div>
+
+        <!-- CREAR CURSO -->
+
+        <!-- CREAR ACTIVIDAD -->
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-10">
+
+            <h2 class="text-2xl font-bold mb-6">
+                Conexión Comunitaria
+            </h2>
+
+            <form id="form-actividad" class="grid md:grid-cols-2 gap-5">
+
+                <input type="text" id="actividad-titulo" placeholder="Título" class="border p-3 rounded-xl" required>
+
+                <select id="actividad-tipo" class="border p-3 rounded-xl" required>
+
+                    <option value="">
+                        Seleccionar tipo
+                    </option>
+
+                    <option value="Actividad">
+                        Actividad
+                    </option>
+
+                    <option value="Taller">
+                        Taller
+                    </option>
+
+                </select>
+
+                <input type="date" id="actividad-fecha" class="border p-3 rounded-xl" required>
+
+                <input type="date" id="actividad-fecha" class="border p-3 rounded-xl" required>
+
+                <input type="time" id="actividad-hora" class="border p-3 rounded-xl" required>
+
+                <input type="text" id="actividad-ubicacion" placeholder="Ubicación" class="border p-3 rounded-xl"
+                    required>
+
+                <input type="number" id="actividad-cupos" placeholder="Cupos" class="border p-3 rounded-xl" required>
+
+                <input type="text" id="actividad-imagen" placeholder="URL de la imagen" class="border p-3 rounded-xl">
+
+                <select id="actividad-estado" class="border p-3 rounded-xl">
+
+                    <option value="Publicado">
+                        Publicado
+                    </option>
+
+                    <option value="Borrador">
+                        Borrador
+                    </option>
+
+                    <option value="Finalizado">
+                        Finalizado
+                    </option>
+
+                </select>
+
+                <textarea id="actividad-descripcion" placeholder="Descripción"
+                    class="border p-3 rounded-xl md:col-span-2" required></textarea>
+
+                <button type="submit"
+                    class="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-xl transition md:col-span-2">
+
+                    Crear Actividad / Taller
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-10">
+
+            <h2 class="text-2xl font-bold mb-6">
+                Crear Curso
+            </h2>
+
+            <form id="form-curso" class="grid md:grid-cols-2 gap-5">
+
+                <input type="text" id="nombre" placeholder="Nombre curso" class="border p-3 rounded-xl" required>
+
+                <input type="date" id="fecha" class="border p-3 rounded-xl" required>
+
+                <textarea id="descripcion" placeholder="Descripción" class="border p-3 rounded-xl md:col-span-2"
+                    required></textarea>
+
+                <input type="number" id="cupos" placeholder="Cantidad cupos" class="border p-3 rounded-xl" required>
+
+                <button type="submit"
+                    class="bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl transition md:col-span-2">
+
+                    Crear Curso
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- LISTA CURSOS -->
+
+        <div>
+
+            <h2 class="text-3xl font-bold mb-6">
+                Cursos Existentes
+            </h2>
+
+            <div id="lista-cursos" class="grid md:grid-cols-2 gap-6">
+
+            </div>
+
+            <!-- LISTA ACTIVIDADES -->
+
+            <div class="mt-12">
+
+                <h2 class="text-3xl font-bold mb-6">
+                    Actividades y Talleres
+                </h2>
+
+                <div id="lista-actividades" class="grid md:grid-cols-2 gap-6">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/config.js"></script>
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>
