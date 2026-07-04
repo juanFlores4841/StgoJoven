@@ -55,13 +55,13 @@ Además, incorpora un panel administrativo desde el cual es posible gestionar cu
 Clonar el repositorio
 
 ```bash
-git clone https://github.com/USUARIO/NOMBRE_REPOSITORIO.git
+git clone https://github.com/juanFlores4841/StgoJoven.git
 ```
 
 Entrar al proyecto
 
 ```bash
-cd NOMBRE_REPOSITORIO
+cd StgoJoven
 ```
 
 Instalar dependencias
@@ -89,9 +89,9 @@ DB_HOST=localhost
 
 DB_PORT=5432
 
-DB_USER=postgres
+DB_USER=postgres  (nombre de tu usuario postgres)
 
-DB_PASSWORD=tu_password
+DB_PASSWORD=tu_password  (tu pass de usuario de la bbdd)
 
 DB_NAME=stgojoven
 
