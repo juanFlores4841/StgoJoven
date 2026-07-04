@@ -1,7 +1,9 @@
 // ======================================
 // CARGAR CONEXIÓN COMUNITARIA
 // ======================================
+
 console.log("comunidad.js cargado");
+
 document.addEventListener(
     "DOMContentLoaded",
     cargarConexionComunitaria
@@ -15,6 +17,14 @@ async function cargarConexionComunitaria() {
             await fetch(
                 `${urlBase}/api/comunidad`
             );
+
+        if (!respuesta.ok) {
+
+            throw new Error(
+                "No se pudieron obtener las actividades."
+            );
+
+        }
 
         const actividades =
             await respuesta.json();
@@ -43,75 +53,102 @@ async function cargarConexionComunitaria() {
 
             const fecha =
                 new Date(item.fecha)
-                    .toLocaleDateString(
-                        "es-CL"
-                    );
+                    .toLocaleDateString("es-CL");
 
             const html = `
 
-            <li class="card flex items-start gap-4">
+            <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden">
 
-                <i class="fas fa-calendar-check text-2xl text-secondary-500"></i>
+                <img
+                    src="${item.imagen || 'img/no-image.jpg'}"
+                    alt="${item.titulo}"
+                    class="w-full h-52 object-cover">
 
-                <div>
+                <div class="p-5">
 
-                    <h4 class="font-bold text-lg">
+                    <span class="inline-block bg-primary-100 text-primary-700 text-xs font-bold px-3 py-1 rounded-full mb-3">
+
+                        ${item.tipo}
+
+                    </span>
+
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">
 
                         ${item.titulo}
 
                     </h4>
 
-                    <p class="text-gray-600 text-sm">
+                    <p class="text-gray-600 text-sm mb-4">
 
                         ${item.descripcion}
 
                     </p>
 
-                    <p class="text-gray-500 text-xs mt-2">
+                    <div class="space-y-2 text-sm text-gray-600">
 
-                        📅 ${fecha}
-                    </p>
+                        <p>
 
-                    <p class="text-gray-500 text-xs">
+                            <i class="fas fa-calendar-alt text-primary-500 mr-2"></i>
 
-                        📍 ${item.ubicacion}
-                    </p>
+                            ${fecha}
 
-                    <p class="text-green-600 text-xs font-semibold">
+                        </p>
 
-                        Cupos: ${item.cupos}
-                    </p>
+                        <p>
+
+                            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+
+                            ${item.ubicacion}
+
+                        </p>
+
+                        <p>
+
+                            <i class="fas fa-users text-green-500 mr-2"></i>
+
+                            Cupos disponibles:
+                            ${item.cupos}
+
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="mt-5 w-full bg-primary-500 hover:bg-primary-600 text-white py-2 rounded-xl transition">
+
+                        Ver detalles
+
+                    </button>
 
                 </div>
 
-            </li>
+            </div>
+
             `;
 
-            if (
-                item.tipo ===
-                "Actividad"
-            ) {
+            if (item.tipo === "Actividad") {
 
-                listaActividades
-                    .innerHTML += html;
+                listaActividades.innerHTML += html;
+
             }
 
-            if (
-                item.tipo ===
-                "Taller"
-            ) {
+            if (item.tipo === "Taller") {
 
-                listaTalleres
-                    .innerHTML += html;
+                listaTalleres.innerHTML += html;
+
             }
 
         });
 
-    } catch (error) {
+    }
+
+    catch (error) {
 
         console.error(
             "Error cargando conexión comunitaria:",
             error
         );
+
     }
+
 }

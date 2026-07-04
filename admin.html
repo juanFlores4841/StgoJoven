@@ -70,9 +70,10 @@
                     </option>
 
                 </select>
-
+                Fecha inicio:
                 <input type="date" id="actividad-fecha" class="border p-3 rounded-xl" required>
 
+                Fecha registro:
                 <input type="date" id="actividad-fecha" class="border p-3 rounded-xl" required>
 
                 <input type="time" id="actividad-hora" class="border p-3 rounded-xl" required>
@@ -114,6 +115,7 @@
 
         </div>
 
+        <!-- CREAR CURSO-->
         <div class="bg-white rounded-2xl shadow-xl p-8 mb-10">
 
             <h2 class="text-2xl font-bold mb-6">
@@ -170,11 +172,190 @@
 
         </div>
 
+
+        <!-- ====================================== -->
+        <!-- ANÁLISIS DE ENCUESTAS -->
+        <!-- ====================================== -->
+
+        <section class="mt-16">
+
+            <h2 class="text-3xl font-bold mb-8">
+
+                📊 Análisis de Encuestas
+
+            </h2>
+
+            <!-- TARJETAS RESUMEN -->
+
+            <div class="grid md:grid-cols-4 gap-6 mb-10">
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+
+                    <h3 class="text-gray-500">
+
+                        Encuestas
+
+                    </h3>
+
+                    <p id="estadistica-total" class="text-4xl font-bold text-blue-600 mt-2">
+
+                        0
+
+                    </p>
+
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+
+                    <h3 class="text-gray-500">
+
+                        Promedio
+
+                    </h3>
+
+                    <p id="estadistica-rating" class="text-4xl font-bold text-yellow-500 mt-2">
+
+                        0
+
+                    </p>
+
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+
+                    <h3 class="text-gray-500">
+
+                        Tema Principal
+
+                    </h3>
+
+                    <p id="estadistica-interes" class="text-xl font-bold text-green-600 mt-3">
+
+                        -
+
+                    </p>
+
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+
+                    <h3 class="text-gray-500">
+
+                        Participación
+
+                    </h3>
+
+                    <p id="estadistica-participacion" class="text-4xl font-bold text-purple-600 mt-2">
+
+                        0%
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- RANGO ETARIO -->
+            <section class="mt-10">
+
+                <div class="grid lg:grid-cols-2 gap-8">
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                        <h3 class="text-xl font-bold mb-5">
+
+                            Distribución por Edad
+
+                        </h3>
+
+                        <div class="h-80">
+
+                            <canvas id="graficoEdades"></canvas>
+
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                        <h3 class="text-xl font-bold mb-5">
+
+                            Ocupaciones
+
+                        </h3>
+
+                        <canvas id="graficoOcupaciones"></canvas>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="mt-8">
+
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+
+                    <h3 class="text-xl font-bold mb-5">
+
+                        Intereses Prioritarios
+
+                    </h3>
+
+                    <canvas id="graficoIntereses"></canvas>
+
+                </div>
+
+            </section>
+
+            <!-- SUGERENCIAS -->
+
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+
+                <h3 class="text-2xl font-bold mb-5">
+
+                    Últimas Sugerencias
+
+                </h3>
+
+                <div id="estadistica-sugerencias" class="space-y-3">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ====================================== -->
+        <!-- MENSAJES DE CONTACTO -->
+        <!-- ====================================== -->
+
+        <section class="mt-16">
+
+            <h2 class="text-3xl font-bold mb-8">
+
+                📨 Mensajes de Contacto
+
+            </h2>
+
+            <div id="lista-mensajes" class="space-y-6">
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center text-gray-500">
+
+                    No existen mensajes.
+
+                </div>
+
+            </div>
+
+        </section>
+
     </div>
 
     <script src="js/config.js"></script>
-
     <script src="js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/adminEncuestas.js"></script>
+    <script src="js/adminContacto.js"></script>
 
 </body>
 

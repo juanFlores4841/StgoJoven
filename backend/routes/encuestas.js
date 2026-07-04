@@ -6,44 +6,42 @@ const verificarToken =
     require("../middleware/authMiddleware");
 
 const {
-    crearActividad,
-    obtenerActividades,
-    eliminarActividad,
-    actualizarActividad
-} = require("../controllers/comunidadController");
+
+    guardarEncuesta,
+    verificarEncuesta,
+    obtenerEncuestas
+
+} = require("../controllers/encuestaController");
 
 // ======================================
-// CREAR
+// GUARDAR
 // ======================================
 
 router.post(
     "/",
     verificarToken,
-    crearActividad
+    guardarEncuesta
+);
+
+// ======================================
+// VERIFICAR
+// ======================================
+
+router.get(
+    "/verificar",
+    verificarToken,
+    verificarEncuesta
 );
 
 // ======================================
 // LISTAR
+// (Más adelante restringiremos a admin)
 // ======================================
 
 router.get(
     "/",
-    obtenerActividades
-);
-
-// ======================================
-// ELIMINAR
-// ======================================
-
-router.put(
-    "/:id",
     verificarToken,
-    actualizarActividad
-);
-router.delete(
-    "/:id",
-    verificarToken,
-    eliminarActividad
+    obtenerEncuestas
 );
 
 module.exports = router;

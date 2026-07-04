@@ -418,35 +418,34 @@
         <div class="absolute inset-0 bg-gradient-to-br from-primary-600/45 to-secondary-600/85 z-0"></div>
 
         <div class="container mx-auto max-w-7xl text-center relative z-10">
-          
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Apoyo Joven: Crece, participa y aprende</h1>
-            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90">
-              Tu espacio para encontrar orientación, capacitarte en nuevas habilidades y conectar con tu comunidad.
-              <br class="hidden md:block">
-              <strong>Dirigido a jóvenes de 14 a 29 años.</strong>
-            </p>
-            <a href="#apoyo" class="btn btn-accent text-lg px-8 py-3">¡Descubre los programas!</a>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
-              <a href="#apoyo" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
-                <i class="fas fa-hands-helping text-4xl mb-3"></i>
-                <h3 class="text-base md:text-xl font-semibold">Apoyo Joven</h3>
-              </a>
-              <a href="#proyeccion"
-                class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
-                <i class="fas fa-rocket text-4xl mb-3"></i>
-                <h3 class="text-xl font-semibold">Proyección</h3>
-              </a>
-              <a href="#accion" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
-                <i class="fas fa-bullhorn text-4xl mb-3"></i>
-                <h3 class="text-xl font-semibold">Acción Joven</h3>
-              </a>
-              <a href="#conexion" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
-                <i class="fas fa-users text-4xl mb-3"></i>
-                <h3 class="text-xl font-semibold">Conexión</h3>
-              </a>
-            </div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Apoyo Joven: Crece, participa y aprende</h1>
+          <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90">
+            Tu espacio para encontrar orientación, capacitarte en nuevas habilidades y conectar con tu comunidad.
+            <br class="hidden md:block">
+            <strong>Dirigido a jóvenes de 14 a 29 años.</strong>
+          </p>
+          <a href="#apoyo" class="btn btn-accent text-lg px-8 py-3">¡Descubre los programas!</a>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+            <a href="#apoyo" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
+              <i class="fas fa-hands-helping text-4xl mb-3"></i>
+              <h3 class="text-base md:text-xl font-semibold">Apoyo Joven</h3>
+            </a>
+            <a href="#proyeccion" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
+              <i class="fas fa-rocket text-4xl mb-3"></i>
+              <h3 class="text-xl font-semibold">Proyección</h3>
+            </a>
+            <a href="#accion" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
+              <i class="fas fa-bullhorn text-4xl mb-3"></i>
+              <h3 class="text-xl font-semibold">Acción Joven</h3>
+            </a>
+            <a href="#conexion" class="bg-white/20 p-6 rounded-lg backdrop-blur-sm hover:bg-white/30 transition-all">
+              <i class="fas fa-users text-4xl mb-3"></i>
+              <h3 class="text-xl font-semibold">Conexión</h3>
+            </a>
           </div>
+        </div>
       </section>
 
       <!-- 2. SECCIÓN APOYO JOVEN -->
@@ -644,16 +643,44 @@
           <div class="grid md:grid-cols-2 gap-8">
             <div id="conexion-actividades" class="pt-16">
               <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8">Actividades</h3>
-              <ul id="lista-actividades-comunidad" class="space-y-4">
-              </ul>
+              <div id="lista-actividades-comunidad" class="grid gap-6">
+              </div>
             </div>
             <div id="conexion-talleres" class="pt-16">
               <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-8">Talleres</h3>
-              <ul id="lista-talleres-comunidad" class="space-y-4">
-              </ul>
+              <div id="lista-talleres-comunidad" class="grid gap-6">
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- ÚLTIMAS ACTIVIDADES -->
+
+      <section id="ultimas-actividades" class="py-20 px-6 bg-light-bg">
+
+        <div class="container mx-auto max-w-7xl">
+
+          <i class="fas fa-camera text-4xl text-primary-500 text-center w-full block mb-4"></i>
+
+          <h2 class="section-title">
+
+            Últimas Actividades
+
+          </h2>
+
+          <p class="section-subtitle">
+
+            Descubre nuestras actividades más recientes y conoce todo lo que está ocurriendo en Santiago Joven.
+
+          </p>
+
+          <div id="contenedor-ultimas-actividades" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          </div>
+
+        </div>
+
       </section>
 
       <!-- 7. SECCIÓN CALENDARIO -->
@@ -1542,6 +1569,12 @@
   <script src="js/comunidad.js"></script>
 
   <script src="js/calendario.js"></script>
+
+  <script src="js/ultimasActividades.js"></script>
+
+  <script src="js/encuestas.js"></script>
+
+  <script src="js/contacto.js"></script>
 </body>
 
 </html>

@@ -2,48 +2,54 @@ const express = require("express");
 
 const router = express.Router();
 
-const verificarToken =
-    require("../middleware/authMiddleware");
+const verificarToken = require("../middleware/authMiddleware");
 
 const {
-    crearActividad,
-    obtenerActividades,
-    eliminarActividad,
-    actualizarActividad
-} = require("../controllers/comunidadController");
+
+    enviarMensaje,
+    obtenerMensajes,
+    marcarLeido
+
+} = require("../controllers/contactoController");
 
 // ======================================
-// CREAR
+// ENVIAR MENSAJE (PÚBLICO)
 // ======================================
 
 router.post(
+
     "/",
-    verificarToken,
-    crearActividad
+
+    enviarMensaje
+
 );
 
 // ======================================
-// LISTAR
+// OBTENER MENSAJES (ADMIN)
 // ======================================
 
 router.get(
+
     "/",
-    obtenerActividades
+
+    verificarToken,
+
+    obtenerMensajes
+
 );
 
 // ======================================
-// ELIMINAR
+// MARCAR COMO LEÍDO
 // ======================================
 
 router.put(
+
     "/:id",
+
     verificarToken,
-    actualizarActividad
-);
-router.delete(
-    "/:id",
-    verificarToken,
-    eliminarActividad
+
+    marcarLeido
+
 );
 
 module.exports = router;
