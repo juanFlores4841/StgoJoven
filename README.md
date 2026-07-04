@@ -167,6 +167,6 @@ http://localhost:3000
 
 # Autores
 
-Juan Flores - Braulio Jara - Pedro Llanca - Base de datos
+Juan Flores - Braulio Jara - Pedro Llanca - Gustavo Machuca
 
 Ingeniería en Informática
